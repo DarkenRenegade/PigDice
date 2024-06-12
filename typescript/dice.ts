@@ -26,14 +26,17 @@ window.onload = function(){
 }
 
 function createNewGame(){
-    //set player 1 and player 2 scores to 0
     
+    //set player 1 and player 2 scores to 0
+    (<HTMLInputElement>document.getElementById("score1")).value = "99";
     //verify each player has a name
     //if both players don't have a name display error
 
     //if both players do have a name start the game!
     (<HTMLElement>document.getElementById("turn")).classList.add("open");
     (<HTMLInputElement>document.getElementById("total")).value = "0";
+    // TRYING SOMETHING ELSE!
+    (<HTMLInputElement>document.getElementById("total")).value = "10";
     //lock in player names and then change players
     (<HTMLInputElement>document.getElementById("player1")).setAttribute("disabled", "disabled");
     (<HTMLInputElement>document.getElementById("player2")).setAttribute("disabled", "disabled");
