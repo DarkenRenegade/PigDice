@@ -28,6 +28,7 @@ window.onload = function(){
 function createNewGame(){
     
     //set player 1 and player 2 scores to 0
+    window.alert("something!");
     (<HTMLInputElement>document.getElementById("score1")).value = "99";
     //verify each player has a name
     //if both players don't have a name display error
