@@ -17,6 +17,8 @@ function changePlayers():void{
 }
 
 window.onload = function(){
+    window.alert("something!");
+    
     let newGameBtn = document.getElementById("new_game") as HTMLButtonElement;
     newGameBtn.onclick = createNewGame;
 
