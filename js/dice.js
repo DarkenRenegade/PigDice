@@ -16,8 +16,6 @@ window.onload = function () {
     document.getElementById("hold").onclick = holdDie;
 };
 function createNewGame() {
-    window.alert("something!");
-    document.getElementById("score1").value = "99";
     document.getElementById("turn").classList.add("open");
     document.getElementById("total").value = "0";
     document.getElementById("total").value = "10";
