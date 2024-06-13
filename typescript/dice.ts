@@ -38,6 +38,10 @@ function areNamesValid() {
         errorMsg = "Names must be different";
         isValid = false;
     }
+    if (errorMsg != "") {
+        alert(errorMsg);
+    }
+    return isValid;
 }
 
 function createNewGame(){
@@ -47,7 +51,7 @@ function createNewGame(){
 
     //verify each player has a name
     //if both players don't have a name display error
-    areNamesValid();
+    areNamesValid;
     //if both players do have a name start the game!
     (<HTMLElement>document.getElementById("turn")).classList.add("open");
     (<HTMLInputElement>document.getElementById("total")).value = "0";

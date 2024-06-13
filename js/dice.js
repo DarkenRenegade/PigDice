@@ -27,11 +27,15 @@ function areNamesValid() {
         errorMsg = "Names must be different";
         isValid = false;
     }
+    if (errorMsg != "") {
+        alert(errorMsg);
+    }
+    return isValid;
 }
 function createNewGame() {
     document.getElementById("score1").value = "0";
     document.getElementById("score2").value = "0";
-    areNamesValid();
+    areNamesValid;
     document.getElementById("turn").classList.add("open");
     document.getElementById("total").value = "0";
     document.getElementById("player1").setAttribute("disabled", "disabled");
