@@ -26,6 +26,7 @@ window.onload = function(){
 }
 
 function areNamesValid() {
+    alert("areNamesValid is working!");
     var errorMsg = "";
     var player1Name = (<HTMLInputElement>document.getElementById("player1")).value.trim;
     var player2Name = (<HTMLInputElement>document.getElementById("player2")).value.trim;

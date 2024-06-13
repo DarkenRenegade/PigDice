@@ -15,6 +15,7 @@ window.onload = function () {
     document.getElementById("hold").onclick = holdDie;
 };
 function areNamesValid() {
+    alert("areNamesValid is working!");
     var errorMsg = "";
     var player1Name = document.getElementById("player1").value.trim;
     var player2Name = document.getElementById("player2").value.trim;
