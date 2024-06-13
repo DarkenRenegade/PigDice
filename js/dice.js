@@ -9,13 +9,14 @@ function changePlayers() {
     let player2Name = document.getElementById("player2").value;
 }
 window.onload = function () {
-    window.alert("sometext");
     let newGameBtn = document.getElementById("new_game");
     newGameBtn.onclick = createNewGame;
     document.getElementById("roll").onclick = rollDie;
     document.getElementById("hold").onclick = holdDie;
 };
 function createNewGame() {
+    document.getElementById("score1").value = "0";
+    document.getElementById("score2").value = "0";
     document.getElementById("turn").classList.add("open");
     document.getElementById("total").value = "0";
     document.getElementById("player1").setAttribute("disabled", "disabled");

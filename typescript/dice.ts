@@ -17,7 +17,6 @@ function changePlayers():void{
 }
 
 window.onload = function(){
-    window.alert("sometext");
     let newGameBtn = document.getElementById("new_game") as HTMLButtonElement;
     newGameBtn.onclick = createNewGame;
 
@@ -28,6 +27,8 @@ window.onload = function(){
 
 function createNewGame(){
     //set player 1 and player 2 scores to 0
+    (<HTMLInputElement>document.getElementById("score1")).value = "0";
+    (<HTMLInputElement>document.getElementById("score2")).value = "0";
 
     //verify each player has a name
     //if both players don't have a name display error
