@@ -58,6 +58,7 @@ function createNewGame() {
 function rollDie() {
     let currTotal = parseInt(document.getElementById("total").value);
     let currentPlayer = document.getElementById("current").innerText;
+    let currentPlayerTotalScore = 0;
     let dieRollValue = generateRandomValue(1, 6);
     if (dieRollValue == 1) {
         currTotal = 0;
@@ -66,13 +67,17 @@ function rollDie() {
     else {
         currTotal += dieRollValue;
         if (currentPlayer == player1Name) {
-            if (parseInt(document.getElementById("score1").value) + currTotal >= 100) {
-                window.alert(player1Name + " wins!");
+            currentPlayerTotalScore = parseInt(document.getElementById("score1").value) + currTotal;
+            if (currentPlayerTotalScore >= 100) {
+                window.alert(player1Name + " wins with a score of " + currentPlayerTotalScore + "!");
+                clearGameBoard();
             }
         }
         else {
-            if (parseInt(document.getElementById("score2").value) + currTotal >= 100) {
-                window.alert(player2Name + " wins!");
+            currentPlayerTotalScore = parseInt(document.getElementById("score2").value) + currTotal;
+            if (currentPlayerTotalScore >= 100) {
+                window.alert(player2Name + " wins with a score of " + currentPlayerTotalScore + "!");
+                clearGameBoard();
             }
         }
     }
@@ -93,4 +98,7 @@ function holdDie() {
     }
     document.getElementById("total").value = "0";
     changePlayers();
+}
+function clearGameBoard() {
+    location.reload();
 }

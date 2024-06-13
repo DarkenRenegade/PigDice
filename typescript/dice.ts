@@ -84,7 +84,7 @@ function createNewGame(){
 function rollDie():void{
     let currTotal = parseInt((<HTMLInputElement>document.getElementById("total")).value);
     let currentPlayer = (<HTMLElement>document.getElementById("current")).innerText; 
-    
+    let currentPlayerTotalScore = 0;
     //roll the die and get a random value 1 - 6 (use generateRandomValue function)
     let dieRollValue = generateRandomValue(1,6);
 
@@ -101,16 +101,18 @@ function rollDie():void{
         //if the current player's score so far + current score in this player's round >= 100, the current player wins!
         //determine which player it is
         if (currentPlayer == player1Name) {
-            if (parseInt((<HTMLInputElement>document.getElementById("score1")).value) + currTotal >= 100) {
+            currentPlayerTotalScore = parseInt((<HTMLInputElement>document.getElementById("score1")).value) + currTotal;
+            if (currentPlayerTotalScore >= 100) {
                 //player1 wins
-                window.alert(player1Name + " wins!");
-
+                window.alert(player1Name + " wins with a score of " + currentPlayerTotalScore + "!");
+                clearGameBoard();
             }
         } else {
-            if (parseInt((<HTMLInputElement>document.getElementById("score2")).value) + currTotal >= 100) {
+            currentPlayerTotalScore = parseInt((<HTMLInputElement>document.getElementById("score2")).value) + currTotal;
+            if (currentPlayerTotalScore >= 100) {
                 //player 2 wins
-                window.alert(player2Name + " wins!");
-
+                window.alert(player2Name + " wins with a score of " + currentPlayerTotalScore + "!");
+                clearGameBoard();
             }
         }
     }
@@ -141,4 +143,12 @@ function holdDie():void{
 
     //change players
     changePlayers();
+}
+
+function clearGameBoard(){
+    // (<HTMLElement>document.getElementById("turn")).classList.add("close");
+    // (<HTMLInputElement>document.getElementById("total")).value = "";
+    // (<HTMLInputElement>document.getElementById("score1")).value = "";
+    // (<HTMLInputElement>document.getElementById("score2")).value = "";
+    location.reload();
 }
