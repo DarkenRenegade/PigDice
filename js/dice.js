@@ -9,7 +9,6 @@ function changePlayers() {
     let player2Name = document.getElementById("player2").value;
 }
 window.onload = function () {
-    window.alert("anything!");
     let newGameBtn = document.getElementById("new_game");
     newGameBtn.onclick = createNewGame;
     document.getElementById("roll").onclick = rollDie;

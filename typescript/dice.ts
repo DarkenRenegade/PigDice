@@ -17,10 +17,9 @@ function changePlayers():void{
 }
 
 window.onload = function(){
-    window.alert("anything!");
     let newGameBtn = document.getElementById("new_game") as HTMLButtonElement;
     newGameBtn.onclick = createNewGame;
-
+    
     (<HTMLButtonElement>document.getElementById("roll")).onclick = rollDie;
 
     (<HTMLButtonElement>document.getElementById("hold")).onclick = holdDie;
