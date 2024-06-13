@@ -26,13 +26,12 @@ window.onload = function(){
 }
 
 function areNamesValid() {
-    alert("areNamesValid is working!");
     var errorMsg = "";
     var player1Name = (<HTMLInputElement>document.getElementById("player1")).value.trim;
     var player2Name = (<HTMLInputElement>document.getElementById("player2")).value.trim;
     var isValid = true;
     
-    if ( player1Name() == "" || player2Name() == "" ) {
+    if ( player1Name() == "" ) {
         errorMsg = "Names are required for both players";
         isValid = false;
     } else if (player1Name == player2Name) {
@@ -52,7 +51,7 @@ function createNewGame(){
 
     //verify each player has a name
     //if both players don't have a name display error
-    areNamesValid;
+    areNamesValid();
     //if both players do have a name start the game!
     (<HTMLElement>document.getElementById("turn")).classList.add("open");
     (<HTMLInputElement>document.getElementById("total")).value = "0";

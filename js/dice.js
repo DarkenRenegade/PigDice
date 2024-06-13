@@ -15,12 +15,11 @@ window.onload = function () {
     document.getElementById("hold").onclick = holdDie;
 };
 function areNamesValid() {
-    alert("areNamesValid is working!");
     var errorMsg = "";
     var player1Name = document.getElementById("player1").value.trim;
     var player2Name = document.getElementById("player2").value.trim;
     var isValid = true;
-    if (player1Name() == "" || player2Name() == "") {
+    if (player1Name() == "") {
         errorMsg = "Names are required for both players";
         isValid = false;
     }
@@ -36,7 +35,7 @@ function areNamesValid() {
 function createNewGame() {
     document.getElementById("score1").value = "0";
     document.getElementById("score2").value = "0";
-    areNamesValid;
+    areNamesValid();
     document.getElementById("turn").classList.add("open");
     document.getElementById("total").value = "0";
     document.getElementById("player1").setAttribute("disabled", "disabled");
