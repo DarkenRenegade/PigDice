@@ -25,6 +25,21 @@ window.onload = function(){
     (<HTMLButtonElement>document.getElementById("hold")).onclick = holdDie;
 }
 
+function areNamesValid() {
+    var errorMsg = "";
+    var player1Name = (<HTMLInputElement>document.getElementById("player1")).value.trim;
+    var player2Name = (<HTMLInputElement>document.getElementById("player2")).value.trim;
+    var isValid = true;
+    
+    if ( player1Name() == "" || player2Name() == "" ) {
+        errorMsg = "Names are required for both players";
+        isValid = false;
+    } else if (player1Name == player2Name) {
+        errorMsg = "Names must be different";
+        isValid = false;
+    }
+}
+
 function createNewGame(){
     //set player 1 and player 2 scores to 0
     (<HTMLInputElement>document.getElementById("score1")).value = "0";
@@ -32,7 +47,7 @@ function createNewGame(){
 
     //verify each player has a name
     //if both players don't have a name display error
-
+    areNamesValid();
     //if both players do have a name start the game!
     (<HTMLElement>document.getElementById("turn")).classList.add("open");
     (<HTMLInputElement>document.getElementById("total")).value = "0";
